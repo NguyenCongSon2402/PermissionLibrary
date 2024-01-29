@@ -1,42 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-    <Button
-        android:id="@+id/checkPermissionButton"
-        android:layout_width="wrap_content"
+    <!-- creating a text view on below line-->
+    <TextView
+        android:id="@+id/idTVMessage"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="264dp"
-        android:text="checkPermissionButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:padding="4dp"
+        android:text="Read/Write String from File in Android"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <!-- creating an edit text on below line -->
+    <EditText
+        android:id="@+id/idEdtMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idTVMessage"
+        android:layout_margin="10dp"
+        android:hint="Enter message to be saved" />
+    <!-- creating a button to write in a file -->
+    <Button
+        android:id="@+id/idBtnWrite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idEdtMsg"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Write File"
+        android:textAllCaps="false" />
+    <!-- creating a text view to display the data from a file-->
+    <TextView
+        android:id="@+id/idTVReadFile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idBtnWrite"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:padding="4dp"
+        android:text="File content will appear here"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+    <!-- creating a button for reading data from a file -->
+    <Button
+        android:id="@+id/idBtnRead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idTVReadFile"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Read File"
+        android:textAllCaps="false" />
 
     <TextView
-        android:id="@+id/result"
-        android:layout_width="wrap_content"
+        android:id="@+id/pathSave"
+        android:text="Path:"
+        android:gravity="center"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Result"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkPermissionButton"
-        app:layout_constraintVertical_bias="0.06" />
-
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/result"
-        app:layout_constraintVertical_bias="0.204" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_below="@id/idBtnRead" />
+</RelativeLayout>
